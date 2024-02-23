@@ -8,9 +8,7 @@ boolean paused = false;
 public void setup()
 {
   size(1000, 1000, P3D);  
-  background(255);
-  //noLoop();
-  c = new Cluster(START, 0, 0, 0); // initial number of segments in the tendril and starting (x,y) coordinate
+  reSetup();
 }
 
 public void draw()
@@ -30,7 +28,10 @@ public void draw()
 
 public void mousePressed(){
   if(mouseButton == LEFT)
-    setup();
+    reSetup();
   else
     paused = !paused;
+}
+public void reSetup(){
+  c = new Cluster(START, 0, 0, 0);
 }
